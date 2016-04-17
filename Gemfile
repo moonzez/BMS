@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem "haml-rails", "~> 0.9"
 
+gem 'kaminari'
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.4.2'

@@ -1,5 +1,6 @@
 %h1 Guided tours
 - if @guidedtours.any?
+  = paginate @guidedtours
   %table
     %tr
       %th ID

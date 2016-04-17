@@ -1,5 +1,5 @@
 class GuidedtoursController < ApplicationController
   def index
-    @guidedtours = Guidedtour.all
+    @guidedtours = Guidedtour.page(params[:page])
   end
 end
