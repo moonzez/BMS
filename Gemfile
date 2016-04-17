@@ -10,6 +10,9 @@ gem 'turbolinks'
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -17,3 +20,8 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'launchy'
+end
