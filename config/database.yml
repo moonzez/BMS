@@ -1,0 +1,23 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: <%= ENV['BMS_DATABASE_PASSWORD'] %>
+  host: localhost
+
+development:
+  <<: *default
+  database: bms_development
+  username: <%= ENV['BMS_DATABASE_USERNAME'] %>
+  password: <%= ENV['BMS_DATABASE_PASSWORD'] %>
+
+test:
+  <<: *default
+  database: bms_test
+
+production:
+  <<: *default
+  database: bms_production
+  username: <%= ENV['BMS_PRODUCTION_USERNAME'] %>
+  password: <%= ENV['BMS_PRODUCTION_PASSWORD'] %>
