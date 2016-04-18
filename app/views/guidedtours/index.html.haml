@@ -1,19 +1,2 @@
 %h1 Guided tours
-- if @guidedtours.any?
-  = paginate @guidedtours
-  %table
-    %tr
-      %th ID
-      %th created_at
-      %th Language
-      %th contact person
-    - @guidedtours.each do |tour|
-      %tr
-        %td= tour.id
-        %td= tour.created_at
-        %td= tour.language
-        %td= tour.contact_person
-
-- else
-  There are no guided tours
-
+= render 'common/show_events_list', collection: @guidedtours

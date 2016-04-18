@@ -1,0 +1,17 @@
+- if collection.any?
+  = paginate collection
+  %table
+    %tr
+      %th ID
+      %th created_at
+      %th Language
+      %th contact person
+    - collection.each do |event|
+      %tr
+        %td= event.id
+        %td= event.created_at
+        %td= event.language
+        %td= event.contact_person
+
+- else
+  There are no items
