@@ -7,11 +7,19 @@ namespace :onetime do
     ActiveRecord::Base.connection.execute(query2)
   end
 
-  desc "copy tsrequests to guidedtours"
+  desc "copy tsrequests to seminars"
   task :seminars => :environment do
     query1 = 'CREATE TABLE seminars LIKE ts_requests'
     ActiveRecord::Base.connection.execute(query1)
     query2 = 'INSERT INTO seminars SELECT * FROM ts_requests'
+    ActiveRecord::Base.connection.execute(query2)
+  end
+
+  desc "copy htseminars to hdseminars"
+  task :hdseminars => :environment do
+    query1 = 'CREATE TABLE hdseminars LIKE htseminars'
+    ActiveRecord::Base.connection.execute(query1)
+    query2 = 'INSERT INTO hdseminars SELECT * FROM htseminars'
     ActiveRecord::Base.connection.execute(query2)
   end
 end

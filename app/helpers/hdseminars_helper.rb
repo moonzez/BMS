@@ -1,0 +1,2 @@
+module HdseminarsHelper
+end
